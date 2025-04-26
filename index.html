@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Pet</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+    <div class="start-screen" id="startScreen">
+        <h1>Virtual Pet</h1>
+        <div class="start-form">
+            <input type="text" id="petNameInput" placeholder="Enter your pet's name" maxlength="12">
+            <button class="start-btn" id="startButton">Start Game</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="pet-name" id="petName">Pet Name</h1>
+        <p class="level-info">Level <span id="petLevel">1</span> • Evolution: <span id="evolutionStage">Baby</span></p>
+        
+        <div class="stats-container">
+            <div class="stat">
+                <div class="stat-label">Hunger</div>
+                <div class="stat-bar">
+                    <div class="stat-fill hunger-fill" id="hungerBar" style="width: 10%;"></div>
+                </div>
+                <div id="hungerValue">1/10</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">Energy</div>
+                <div class="stat-bar">
+                    <div class="stat-fill energy-fill" id="energyBar" style="width: 90%;"></div>
+                </div>
+                <div id="energyValue">9/10</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">Mood</div>
+                <div class="stat-bar">
+                    <div class="stat-fill mood-fill" id="moodBar" style="width: 90%;"></div>
+                </div>
+                <div id="moodValue">9/10</div>
+            </div>
+        </div>
+        
+        <div class="pet-area" id="petArea">
+            <div class="pet" id="pet">
+                <img src="assets/cat_idle.png" alt="Pet" id="petImage">
+            </div>
+            
+            <div class="food-bowl" id="foodBowl" title="Food Bowl">
+                <div class="food-level" id="foodLevel" style="height: 0;"></div>
+            </div>
+            
+            <div class="water-bowl" id="waterBowl" title="Water Bowl">
+                <div class="water-level" id="waterLevel" style="height: 0;"></div>
+            </div>
+        </div>
+        
+        <div class="notification" id="notification">Welcome to Virtual Pet!</div>
+        
+        <div class="controls">
+            <button class="control-btn food-btn" id="feedBtn" title="Feed your pet">🍔</button>
+            <button class="control-btn play-btn" id="playBtn" title="Play with your pet">🎮</button>
+            <button class="control-btn sleep-btn" id="sleepBtn" title="Let your pet sleep">😴</button>
+            <button class="control-btn customize-btn" id="customizeBtn" title="Customize your pet">✨</button>
+        </div>
+    </div>
+    
+    <div class="modal" id="customizeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Customize Pet</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="customize-options">
+                <div class="option-group">
+                    <label for="customPetName">Pet Name:</label>
+                    <input type="text" id="customPetName" maxlength="12">
+                </div>
+    
+                <button class="apply-btn" id="applyCustomize">Apply Changes</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="renderer.js"></script>
+</body>
+</html>
